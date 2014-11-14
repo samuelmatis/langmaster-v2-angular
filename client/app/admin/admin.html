@@ -1,0 +1,11 @@
+<div class="container layout-admin">
+    <h3 class="page-header">Users list</h3>
+    <div ng-if="!ctrl.loaded" class="loading"><h3>Loading</h3></div>
+    <ul ng-if="ctrl.loaded" class="list-group">
+        <li class="list-group-item" ng-repeat="user in ctrl.users">
+            <strong ng-bind="::user.name"></strong><br>
+            <span class="text-muted" ng-bind="user.email"></span>
+            <a ng-click="ctrl.delete(user.name, user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+        </li>
+    </ul>
+</div>

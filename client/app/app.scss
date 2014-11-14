@@ -1,0 +1,29 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'common/directives/navbar/navbar.scss';
+@import 'common/services/modal/modal.scss';
+@import 'common/ui/badges.scss';
+@import 'common/ui/buttons.scss';
+@import 'common/ui/layout.scss';
+@import 'common/ui/page.scss';
+@import 'home/home.scss';
+// endinjector

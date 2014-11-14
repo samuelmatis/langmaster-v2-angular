@@ -1,0 +1,31 @@
+<div class="navbar navbar-default navbar-static-top" ng-class="{'navbar-app': !ctrl.isHomepage()}">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" ng-click="ctrl.isCollapsed = !ctrl.isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">langmaster<small>.io</small></a>
+            </div>
+            <div collapse="ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li ng-show="!ctrl.isHomepage() && ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin" ng-click="ctrl.collapseMenu()">Admin</a></li>
+                    <li ng-repeat="item in ::ctrl.appMenu" ng-show="!ctrl.isHomepage() && ctrl.isLoggedIn()" ui-sref-active="active">
+                        <a ui-sref="{{::item.state}}" ng-bind="::item.title" ng-click="ctrl.collapseMenu()"></a>
+                    </li>
+                    <li ng-show="ctrl.isHomepage() && ctrl.isLoggedIn()" class="go-to-app"><a ui-sref="" ng-click="ctrl.collapseMenu()">Go to app</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-hide="ctrl.isLoggedIn()" ui-sref-active="active" class="login-button"><a ui-sref="login" ng-click="ctrl.collapseMenu()">Login</a></li>
+                    <li ng-hide="ctrl.isLoggedIn()" ui-sref-active="active" class="signup-button"><a ui-sref="signup" ng-click="ctrl.collapseMenu()">Sign up</a></li>
+                    <li ng-show="ctrl.isLoggedIn()" class="current-user"><p class="navbar-text" ng-bind="'Hello ' + ctrl.getCurrentUser().name"></p> </li>
+                    <li ng-show="ctrl.isLoggedIn()"><a href="" ng-click="ctrl.logout(); ctrl.collapseMenu()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

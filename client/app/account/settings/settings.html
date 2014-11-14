@@ -1,0 +1,34 @@
+<div class="container layout-settings">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-header">Settings</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 section">
+                <h3 class="page-header">Change password</h3>
+                <form class="form" name="passwordForm" ng-submit="ctrl.changePassword(passwordForm)" novalidate>
+
+                    <div class="col-sm-6 form-group" ng-class="{ 'has-error': passwordForm.password.$mongoose && ctrl.submitted }">
+                        <label>Current Password</label>
+
+                        <input type="password" name="password" class="form-control" ng-model="ctrl.user.oldPassword" lm-mongoose-error>
+                        <p class="help-block" ng-show="passwordForm.password.$error.mongoose" ng-bind="ctrl.passwordErrors.other"></p>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label>New Password</label>
+
+                        <input type="password" name="newPassword" class="form-control" ng-model="ctrl.user.newPassword" ng-minlength="3" required>
+                        <p class="help-block" ng-show="(passwordForm.newPassword.$error.minlength || passwordForm.newPassword.$error.required) && (passwordForm.newPassword.$dirty || ctrl.submitted)">Password must be at least 3 characters.</p>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <p class="help-block" ng-bind="ctrl.passwordMessage"></p>
+
+                        <button ng-disabled="passwordForm.$pristine" class="btn btn-md btn-primary" type="submit">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
