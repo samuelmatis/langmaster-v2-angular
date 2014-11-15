@@ -19,7 +19,7 @@ angular.module('langmaster.words', [])
                     controllerAs: 'ctrl'
                 },
                 'right': {
-                    templateUrl: 'app/words/add/wordsAdd.html',
+                    templateUrl: 'app/words/add/wordAdd.html',
                     controller: 'Words.AddCtrl',
                     controllerAs: 'ctrl'
                 }
