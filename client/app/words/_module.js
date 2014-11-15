@@ -17,6 +17,11 @@ angular.module('langmaster.words', [])
                     templateUrl: 'app/words/list/wordsList.html',
                     controller: 'Words.ListCtrl',
                     controllerAs: 'ctrl',
+                },
+                'right': {
+                    templateUrl: 'app/words/add/wordsAdd.html',
+                    controller: 'Words.AddCtrl',
+                    controllerAs: 'ctrl'
                 }
             },
             authenticate: true

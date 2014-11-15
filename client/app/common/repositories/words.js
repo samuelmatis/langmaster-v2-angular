@@ -11,4 +11,9 @@ angular.module('langmaster.common')
     this.getWords = function() {
         return wordsResource.one().get();
     };
+
+    this.createWord = function(form) {
+        return wordsResource.post(form);
+    };
+
 });
