@@ -20,4 +20,11 @@ angular.module('langmaster.words')
         ctrl.words.push(word);
     });
 
+    ctrl.removeWord = function(word) {
+        return WordsRepository.removeWord(word)
+                .then(function() {
+                    ctrl.words = _.without(ctrl.words, word);
+                });
+    };
+
 });

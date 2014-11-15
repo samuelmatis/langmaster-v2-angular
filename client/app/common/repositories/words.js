@@ -16,4 +16,11 @@ angular.module('langmaster.common')
         return wordsResource.post(form);
     };
 
+    this.removeWord = function(word) {
+        return wordsResource.one(word._id).get()
+                .then(function(word) {
+                    return word.remove();
+                });
+    };
+
 });

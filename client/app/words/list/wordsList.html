@@ -20,7 +20,7 @@
                     <td ng-bind="word.strength"></td>
                     <td>
                         <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                        <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i> Delete</a>
+                        <a class="btn btn-default btn-xs" ng-click="ctrl.removeWord(word)"><i class="glyphicon glyphicon-remove"></i> Delete</a>
                     </td>
                 </tr>
             </tbody>
