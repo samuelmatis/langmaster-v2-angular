@@ -8,7 +8,7 @@
             <tr>
                 <th>Word</th>
                 <th>Translation</th>
-                <th>Score</th>
+                <th>Strength</th>
                 <th></th>
             </tr>
         </thead>
@@ -16,7 +16,7 @@
             <tr ng-repeat="word in ctrl.words | filter: ctrl.searchQuery">
                 <td ng-bind="word.word"></td>
                 <td ng-bind="word.translation"></td>
-                <td ng-bind="word.score"></td>
+                <td ng-bind="word.strength"></td>
                 <td>
                     <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                     <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i> Delete</a>

@@ -2,17 +2,13 @@
 
 angular.module('langmaster.common')
 
-.service('WordsRepository', function() {
+.service('WordsRepository', function (Restangular) {
 
+    // Restangular service
+    var wordsResource = Restangular.service('words');
+
+    // Public API
     this.getWords = function() {
-        return [{
-            word: 'word 1',
-            translation: 'translation 1',
-            score: 1
-        }, {
-            word: 'word 2',
-            translation: 'translation 2',
-            score: 2
-        }];
+        return wordsResource.one().get();
     };
 });

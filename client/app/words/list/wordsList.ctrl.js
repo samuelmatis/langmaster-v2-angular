@@ -4,7 +4,14 @@ angular.module('langmaster.words')
 
 .controller('Words.ListCtrl', function (WordsRepository) {
 
-    this.searchQuery = '';
-    this.words = WordsRepository.getWords();
+    var ctrl = this;
+
+    ctrl.searchQuery = '';
+    ctrl.words = [];
+
+    WordsRepository.getWords()
+        .then(function(words) {
+            ctrl.words = words;
+        });
 
 });
