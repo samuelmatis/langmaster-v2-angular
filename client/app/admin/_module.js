@@ -14,7 +14,7 @@ angular.module('langmaster.admin', [])
                 isAdmin: function(Auth, $state, $timeout) {
                     $timeout(function() {
                         if (!Auth.isAdmin()) {
-                            return $state.go('');
+                            return $state.go('words.list');
                         }
                     });
                 }

@@ -5,6 +5,7 @@ angular.module('langmaster', [
     'langmaster.home',
     'langmaster.account',
     'langmaster.admin',
+    'langmaster.words'
 ])
 
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, RestangularProvider) {

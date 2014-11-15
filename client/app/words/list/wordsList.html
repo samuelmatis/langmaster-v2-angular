@@ -1,0 +1,27 @@
+<h4>Your words</h4>
+
+<input type="text" class="form-control search" ng-model="ctrl.searchQuery" placeholder="Search">
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Translation</th>
+                <th>Score</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="word in ctrl.words | filter: ctrl.searchQuery">
+                <td ng-bind="word.word"></td>
+                <td ng-bind="word.translation"></td>
+                <td ng-bind="word.score"></td>
+                <td>
+                    <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                    <a class="btn btn-default btn-xs"><i class="glyphicon glyphicon-remove"></i> Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -18,7 +18,7 @@ angular.module('langmaster.account')
                 password: ctrl.user.password
             })
             .then( function() {
-                $state.go('');
+                $state.go('words.list');
             })
             .catch( function(err) {
                 err = err.data;

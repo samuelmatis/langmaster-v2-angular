@@ -12,7 +12,7 @@ angular.module('langmaster.account', [])
             resolve: {
                 isLoggedIn: function(Auth, $state) {
                     Auth.isLoggedInAsync(function(result) {
-                        if (result) return $state.go('');
+                        if (result) return $state.go('words.list');
                     });
                 }
             }
@@ -25,7 +25,7 @@ angular.module('langmaster.account', [])
             resolve: {
                 isLoggedIn: function(Auth, $state) {
                     Auth.isLoggedInAsync(function(result) {
-                        if (result) return $state.go('');
+                        if (result) return $state.go('words.list');
                     });
                 }
             }

@@ -11,8 +11,8 @@ angular.module('langmaster.common')
             var ctrl = this;
 
             ctrl.appMenu = [{
-                title: 'Main',
-                state: 'main'
+                title: 'Words',
+                state: 'words.list'
             }, {
                 title: 'Settings',
                 state: 'settings'

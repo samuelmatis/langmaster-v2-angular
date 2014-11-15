@@ -16,7 +16,7 @@
                     <li ng-repeat="item in ::ctrl.appMenu" ng-show="!ctrl.isHomepage() && ctrl.isLoggedIn()" ui-sref-active="active">
                         <a ui-sref="{{::item.state}}" ng-bind="::item.title" ng-click="ctrl.collapseMenu()"></a>
                     </li>
-                    <li ng-show="ctrl.isHomepage() && ctrl.isLoggedIn()" class="go-to-app"><a ui-sref="" ng-click="ctrl.collapseMenu()">Go to app</a></li>
+                    <li ng-show="ctrl.isHomepage() && ctrl.isLoggedIn()" class="go-to-app"><a ui-sref="words.list" ng-click="ctrl.collapseMenu()">Go to app</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
