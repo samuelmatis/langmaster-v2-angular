@@ -8,5 +8,5 @@ module.exports = {
         uri: 'mongodb://localhost/langmaster-dev'
     },
 
-    seedDB: true
+    seedDB: false
 };
