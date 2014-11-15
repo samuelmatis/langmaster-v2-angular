@@ -16,7 +16,7 @@ angular.module('langmaster.words', [])
                 'left': {
                     templateUrl: 'app/words/list/wordsList.html',
                     controller: 'Words.ListCtrl',
-                    controllerAs: 'ctrl',
+                    controllerAs: 'ctrl'
                 },
                 'right': {
                     templateUrl: 'app/words/add/wordsAdd.html',

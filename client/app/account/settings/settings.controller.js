@@ -2,7 +2,7 @@
 
 angular.module('langmaster.account')
 
-.controller('Account.SettingsCtrl', function (Auth, CurrenciesRepository) {
+.controller('Account.SettingsCtrl', function (Auth) {
     var ctrl = this;
 
     ctrl.changePassword = function(form) {
