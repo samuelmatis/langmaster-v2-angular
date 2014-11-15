@@ -12,6 +12,10 @@ angular.module('langmaster.common')
         return wordsResource.one().get();
     };
 
+    this.findById = function(id) {
+        return wordsResource.one(id).get();
+    };
+
     this.createWord = function(form) {
         return wordsResource.post(form);
     };

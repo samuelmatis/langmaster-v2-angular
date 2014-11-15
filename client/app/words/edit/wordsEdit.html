@@ -1,0 +1,21 @@
+<div class="subview-edit">
+    <h4>Edit word</h4>
+
+    <form class="form-horizontal" ng-submit="ctrl.send(ctrl.form)" role="form">
+        <div class="row form-group">
+            <div class="col-xs-2">
+                <input type="text" ng-model="ctrl.form.word" class="form-control" id="create-word" name="word" placeholder="Word">
+            </div>
+            <div class="col-xs-2">
+                <input type="text" ng-model="ctrl.form.translation" class="form-control" id="create-translation" name="translation" placeholder="Translation">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Edit Word</button>
+            </div>
+        </div>
+    </form>
+
+</div>

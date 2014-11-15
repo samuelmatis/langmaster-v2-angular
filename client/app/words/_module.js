@@ -25,5 +25,16 @@ angular.module('langmaster.words', [])
                 }
             },
             authenticate: true
+        })
+        .state('words.edit', {
+            url: '/edit/:id',
+            views: {
+                'full': {
+                    templateUrl: 'app/words/edit/wordsEdit.html',
+                    controller: 'Words.EditCtrl',
+                    controllerAs: 'ctrl'
+                }
+            },
+            authenticate: true
         });
 });
