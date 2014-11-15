@@ -13,7 +13,7 @@ angular.module('langmaster.words', [])
         .state('words.list', {
             url: '',
             views: {
-                'list': {
+                'left': {
                     templateUrl: 'app/words/list/wordsList.html',
                     controller: 'Words.ListCtrl',
                     controllerAs: 'ctrl',
