@@ -18,7 +18,7 @@ angular.module('langmaster.test', [])
             authenticate: true
         })
         .state('test.main', {
-            url: '/test',
+            url: '',
             templateUrl: 'app/test/main/testMain.html',
             controller: 'Test.MainCtrl',
             controllerAs: 'ctrl',
