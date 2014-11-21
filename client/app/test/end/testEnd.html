@@ -1,0 +1,40 @@
+<div class="subview-end">
+
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" ng-click="ctrl.backToWords()" class="btn btn-default navbar-btn btn-logout"><i class="glyphicon glyphicon-chevron-left"></i> Back to words</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="test" class="col-md-4 col-md-offset-4">
+            <h1>Test results</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="word in ::ctrl.words">
+                                <td ng-bind="::word.word"></td>
+                                <td>
+                                    <span ng-show="word.strength === 0" class="glyphicon glyphicon-star-empty"></span>
+                                    <span ng-show="word.success === 1" class="glyphicon glyphicon-circle-arrow-up"></span>
+                                    <span ng-show="word.success === -1" class="glyphicon glyphicon-circle-arrow-down"></span>
+                                    <span lm-stars="{{::word.strength}}"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button ng-click="ctrl.backToWords()" class="btn btn-default pull-right">End test</button>
+                    <button ui-sref="test.start" class="col-md-9 btn btn-success pull-left">Start again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

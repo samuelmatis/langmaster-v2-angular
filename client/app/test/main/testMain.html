@@ -1,0 +1,41 @@
+<div class="subview-main">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="test-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-default" ng-click="ctrl.endTest()">Give up</a>
+                    </div>
+                    <div class="col-md-6 steps" ng-bind="ctrl.currentStep + ' / ' + ctrl.totalSteps"></div>
+                </div>
+            </div>
+            <div class="test-main">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-1">
+                        <p class="lead" ng-bind="ctrl.currentWord.word"></p>
+                    </div>
+                    <div class="col-md-5">
+                        <form class="form" id="test-form" role="form">
+                            <input type="text" ng-model="ctrl.form.word" name="answer" class="form-control col-md-12" ng-disabled="ctrl.testResult" ng-class="'input-' + ctrl.resultClass" lm-autofocus>
+                            <button class="btn btn-success btn-check" form="test-form" ng-hide="ctrl.testResult" ng-click="ctrl.submitForm()">Check</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="test-result" ng-if="ctrl.testResult">
+                <div class="alert" ng-class="'alert-' + ctrl.resultClass" style="margin-top: 40px;">
+
+                    <span ng-switch="ctrl.resultClass">
+                        <span ng-switch-when="success">Great! :)</span>
+                        <span ng-switch-when="warning">You have a small typo in your answer. The answer is <b ng-bind="ctrl.currentWord.translation"></b></span>
+                        <span ng-switch-when="danger">No, the answer is <b ng-bind="ctrl.currentWord.translation"></b></span>
+                    </span>
+
+                    <button class="btn-submit-answer btn pull-right" ng-class="'btn-' + ctrl.resultClass" ng-click="ctrl.nextWord()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

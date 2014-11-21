@@ -12,8 +12,7 @@ var WordSchema = new Schema({
     word: { type: String, required: true },
     translation: { type: String, required: true },
     strength: { type: Number, default: 0 },
-    createdAt: { type: Date, default: Date.now },
-    lastPoints: { type: Number, default: 0 }
+    createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Word', WordSchema);

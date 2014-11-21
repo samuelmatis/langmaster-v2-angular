@@ -7,16 +7,21 @@ angular.module('langmaster.common')
         templateUrl: 'app/common/directives/navbar/navbar.html',
         replace: true,
         controllerAs: 'ctrl',
-        controller: function(Auth, $state) {
+        controller: function(Auth, $state, $rootScope) {
             var ctrl = this;
 
             ctrl.appMenu = [{
                 title: 'Words',
                 state: 'words.list'
             }, {
+                title: 'Test',
+                state: 'test.start'
+            }, {
                 title: 'Settings',
                 state: 'settings'
             }];
+
+            $rootScope.showNavbar = true;
 
             ctrl.isCollapsed = true;
             ctrl.isLoggedIn = Auth.isLoggedIn;

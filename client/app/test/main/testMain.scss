@@ -1,0 +1,31 @@
+.layout-test {
+    .subview-main {
+        margin-top: 50px;
+
+        .test-header {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+
+            .steps {
+                text-align: right;
+                margin-top: 10px;
+            }
+        }
+
+        .test-main {
+            margin-top: 20px;
+
+            form {
+                button.btn-check {
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        .test-result {
+            button {
+                margin-top: -6px;
+            }
+        }
+    }
+}

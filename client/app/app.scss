@@ -22,11 +22,17 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'admin/admin.scss';
 @import 'common/directives/navbar/navbar.scss';
 @import 'common/services/modal/modal.scss';
+@import 'common/ui/alerts.scss';
 @import 'common/ui/badges.scss';
 @import 'common/ui/buttons.scss';
+@import 'common/ui/form.scss';
 @import 'common/ui/layout.scss';
 @import 'common/ui/page.scss';
 @import 'home/home.scss';
+@import 'test/end/testEnd.scss';
+@import 'test/main/testMain.scss';
+@import 'test/start/testStart.scss';
 @import 'words/add/wordAdd.scss';
+@import 'words/edit/wordsEdit.scss';
 @import 'words/list/wordsList.scss';
 // endinjector
