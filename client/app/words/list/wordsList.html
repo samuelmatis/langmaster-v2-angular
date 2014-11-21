@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="word in ctrl.words | filter: ctrl.searchQuery">
+                <tr ng-if="ctrl.words.length" ng-repeat="word in ctrl.words | filter: ctrl.searchQuery">
                     <td ng-bind="word.word"></td>
                     <td ng-bind="word.translation"></td>
                     <td><span lm-stars="{{::word.strength}}"></span></td>
@@ -23,6 +23,7 @@
                         <a class="btn btn-default btn-xs" ng-click="ctrl.removeWord(word)"><i class="glyphicon glyphicon-remove"></i> Delete</a>
                     </td>
                 </tr>
+                <tr ng-if="!ctrl.words.length"><td colspan="4">No words to display</td></tr>
             </tbody>
         </table>
     </div>
