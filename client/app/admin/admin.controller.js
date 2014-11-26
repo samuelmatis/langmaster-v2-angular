@@ -15,7 +15,7 @@ angular.module('langmaster.admin')
     });
 
     ctrl.delete = Modal.confirm.delete(function(user) {
-      User.remove({ id: user._id });
+        User.remove({ id: user._id });
         ctrl.users = _.without(ctrl.users, user);
     });
 
