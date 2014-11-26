@@ -1,19 +1,22 @@
 <div class="subview-add">
     <h4>Add new word</h4>
 
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" name="addForm" role="form" novalidate>
         <div class="row form-group">
-            <div class="col-xs-4">
-                <input type="text" ng-model="ctrl.word.word" class="form-control" id="create-word" name="word" placeholder="Word">
+            <div class="col-xs-4" ng-class="{ 'has-error': addForm.word.$error.required && ctrl.submitted }">
+                <input type="text" ng-model="ctrl.word.word" class="form-control" id="create-word" name="word" placeholder="Word" required>
             </div>
-            <div class="col-xs-4">
-                <input type="text" ng-model="ctrl.word.translation" class="form-control" id="create-translation" name="translation" placeholder="Translation">
+            <div class="col-xs-4" ng-class="{ 'has-error': addForm.translation.$error.required && ctrl.submitted }">
+                <input type="text" ng-model="ctrl.word.translation" class="form-control" id="create-translation" name="translation" placeholder="Translation" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary" ng-click="ctrl.addWord(ctrl.word)">Add Word</button>
+                <p class="help-block" ng-show="addForm.word.$error.required && ctrl.submitted">You must enter a word.</p>
+                <p class="help-block" ng-show="addForm.translation.$error.required && ctrl.submitted">You must enter a translation.</p>
+
+                <button type="submit" class="btn btn-primary" ng-click="ctrl.addWord(addForm)">Add Word</button>
             </div>
         </div>
     </form>

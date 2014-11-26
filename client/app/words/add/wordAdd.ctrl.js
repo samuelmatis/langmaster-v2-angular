@@ -8,11 +8,15 @@ angular.module('langmaster.words')
 
     ctrl.word = {};
 
-    ctrl.addWord = function(word) {
-        WordsRepository.createWord(word)
-            .then(function() {
-                $rootScope.$emit('wordCreated', word);
-            });
+    ctrl.addWord = function(form) {
+        ctrl.submitted = true;
+        if (form.$valid) {
+            WordsRepository.createWord(ctrl.word)
+                .then(function(resWord) {
+                    $rootScope.$emit('wordCreated', resWord);
+                    ctrl.word = '';
+                });
+        }
     };
 
 });
