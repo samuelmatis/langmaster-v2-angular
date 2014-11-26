@@ -17,8 +17,8 @@ angular.module('langmaster.common')
                 title: 'Test',
                 state: 'test.start'
             }, {
-                title: 'Settings',
-                state: 'settings'
+                title: 'Profile',
+                state: 'profile'
             }];
 
             $rootScope.showNavbar = true;

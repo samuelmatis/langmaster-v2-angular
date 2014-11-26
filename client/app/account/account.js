@@ -30,10 +30,10 @@ angular.module('langmaster.account', [])
                 }
             }
         })
-        .state('settings', {
-            url: '/settings',
-            templateUrl: 'app/account/settings/settings.html',
-            controller: 'Account.SettingsCtrl',
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'app/account/profile/profile.html',
+            controller: 'Account.ProfileCtrl',
             controllerAs: 'ctrl',
             authenticate: true
         });

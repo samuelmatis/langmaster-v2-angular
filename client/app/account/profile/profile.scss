@@ -1,0 +1,33 @@
+.layout-profile {
+
+    .well {
+        .profile-picture {
+            height: 158px;
+            width: 158px;
+            padding-top: 70px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .points {
+            margin-top: 15px;
+            margin-left: 2px;
+
+            img {
+                width: 20px;
+                margin-left: 40px;
+            }
+
+            span {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .profile-row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}

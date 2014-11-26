@@ -92,16 +92,16 @@ angular.module('langmaster.common')
         },
 
         /**
-         * Change currency
+         * Update profile
          *
-         * @param  {String}   currency
+         * @param  {Object}   profile
          * @param  {Function} callback    - optional
          * @return {Promise}
          */
-        changeCurrency: function(currency, callback) {
+        updateProfile: function(profile, callback) {
             var cb = callback || angular.noop;
 
-            return User.changeCurrency({ id: currentUser._id }, currency, function(user) {
+            return User.updateProfile({ id: currentUser._id }, profile, function(user) {
                 return cb(user);
             }, function(err) {
                 return cb(err);
@@ -115,6 +115,17 @@ angular.module('langmaster.common')
          */
         getCurrentUser: function() {
             return currentUser;
+        },
+
+
+        removeAccount: function(callback) {
+            var cb = callback || angular.noop;
+
+            return User.removeAccount(function(user) {
+                return cb(user);
+            }, function(err) {
+                return cb(err);
+            }).$promise;
         },
 
         /**

@@ -1,0 +1,85 @@
+<div class="container layout-profile">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="profile-picture">Profile picture</div>
+                        <div class="points"><img src="assets/images/points.png"><span ng-bind="::ctrl.user.points"></span></div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        <h4 ng-bind="::ctrl.user.name"></h4>
+                        <p><i class="glyphicon glyphicon-profile glyphicon-envelope"></i> <span ng-bind="::ctrl.user.email"></span></p>
+                        <p ng-if="::ctrl.user[ctrl.user.provider].link"><i class="fa profile-type-icon" ng-class="::'fa-' + ctrl.user.provider + '-square'"></i> <a href="{{::ctrl.user[ctrl.user.provider].link}}" ng-bind="::ctrl.user.provider | capitalize"></a></p>
+                        <p><b>Learning since:</b> <span ng-bind="::ctrl.user.createdAt | date"></span></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row profile-row" ng-if="ctrl.user.provider === 'local'">
+                <h3 class="page-header">Change password</h3>
+                <form class="form" name="passwordForm" ng-submit="ctrl.updatePassword(passwordForm)" novalidate>
+                    <div class="col-sm-6 form-group" ng-class="{ 'has-error': passwordForm.password.$mongoose && ctrl.submitted }">
+                        <label>Current Password</label>
+
+                        <input type="password" name="password" class="form-control" ng-model="ctrl.passwordForm.oldPassword" lm-mongoose-error>
+                        <p class="help-block" ng-show="passwordForm.password.$error.mongoose" ng-bind="ctrl.passwordErrors.other"></p>
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label>New Password</label>
+
+                        <input type="password" name="newPassword" class="form-control" ng-model="ctrl.passwordForm.newPassword" ng-minlength="3" required>
+                        <p class="help-block" ng-show="(passwordForm.newPassword.$error.minlength || passwordForm.newPassword.$error.required) && (passwordForm.newPassword.$dirty || ctrl.submitted)">Password must be at least 3 characters.</p>
+                    </div>
+
+                    <div class="col-xs-12 form-group">
+                        <p class="help-block" ng-bind="ctrl.passwordMessage"></p>
+
+                        <button ng-disabled="passwordForm.$pristine" class="btn btn-primary pull-right" type="submit">Save password</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row profile-row">
+                <h3 class="page-header">Update profile</h3>
+                <form class="form" name="profileForm" ng-submit="ctrl.updateProfile(profileForm)" novalidate>
+                    <div class="col-sm-6 form-group">
+                        <label>Location</label>
+
+                        <input type="text" name="location" class="form-control" ng-model="ctrl.profileForm.location">
+                    </div>
+
+                    <div class="col-sm-6 form-group">
+                        <label>Native language</label>
+
+                        <input type="text" name="nativeLanguage" class="form-control" ng-model="ctrl.profileForm.nativeLanguage">
+                    </div>
+
+                    <div class="col-sm-12 form-group">
+                        <label>Bio</label>
+
+                        <textarea name="bio" class="form-control" rows="5" ng-model="ctrl.profileForm.bio"></textarea>
+                    </div>
+
+                    <div class="col-xs-12 form-group">
+                        <p class="help-block" ng-bind="ctrl.profileMessage"></p>
+
+                        <button ng-disabled="profileForm.$pristine" class="btn btn-primary pull-right" type="submit">Update profile</button>
+                    </div>
+
+                    <div class="col-xs-12 form-group">
+                        <a class="pull-right text-danger" ng-click="ctrl.removeAccount('your account')">Remove your account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

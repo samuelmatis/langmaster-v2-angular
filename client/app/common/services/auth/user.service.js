@@ -12,16 +12,22 @@ angular.module('langmaster.common')
                 controller: 'password'
             }
         },
-        get: {
-            method: 'GET',
+        updateProfile: {
+            method: 'PUT',
+            params: {
+                controller: 'profile'
+            }
+        },
+        removeAccount: {
+            method: 'DELETE',
             params: {
                 id: 'me'
             }
         },
-        changeCurrency: {
-            method: 'PUT',
+        get: {
+            method: 'GET',
             params: {
-                controller: 'currency'
+                id: 'me'
             }
         }
 	});

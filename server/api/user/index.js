@@ -8,9 +8,11 @@ var auth = require('../../auth/auth.service');
 var router = express.Router();
 
 router.get('/', auth.hasRole('admin'), controller.index);
+router.delete('/me', auth.isAuthenticated(), controller.destroyMe);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
+router.put('/:id/profile', auth.isAuthenticated(), controller.changeProfile);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

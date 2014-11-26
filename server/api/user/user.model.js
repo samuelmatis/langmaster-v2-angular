@@ -18,7 +18,12 @@ var UserSchema = new Schema({
     facebook: {},
     twitter: {},
     google: {},
-    github: {}
+    github: {},
+    points: { type: Number, default: 0 },
+    location: String,
+    nativeLanguage: String,
+    bio: String,
+    createdAt: { type: Date, default: Date.now() }
 });
 
 /**
@@ -41,7 +46,9 @@ UserSchema
     .get(function() {
         return {
             'name': this.name,
-            'role': this.role
+            'role': this.role,
+            'points': this.points,
+            'createdAt': this.createdAt
         };
     });
 
