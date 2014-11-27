@@ -4,8 +4,6 @@ angular.module('langmaster.test')
 
 .controller('Test.MainCtrl', function ($rootScope, $state, Test) {
 
-    $rootScope.showNavbar = false;
-
     var ctrl = this;
 
     Test.getWords(function(words) {

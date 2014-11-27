@@ -8,6 +8,9 @@ angular.module('langmaster.words', [])
             abstract: true,
             url: '/words',
             templateUrl: 'app/words/_layout.html',
+            controller: function($rootScope) {
+                $rootScope.showNavbar = true;
+            },
             authenticate: true
         })
         .state('words.list', {

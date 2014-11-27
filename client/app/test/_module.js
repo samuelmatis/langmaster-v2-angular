@@ -8,6 +8,9 @@ angular.module('langmaster.test', [])
             abstract: true,
             url: '/test',
             templateUrl: 'app/test/_layout.html',
+            controller: function($rootScope) {
+                $rootScope.showNavbar = false;
+            },
             authenticate: true
         })
         .state('test.start', {
