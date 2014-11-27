@@ -1,7 +1,16 @@
 <div class="subview-edit">
+
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" ui-sref="words.list" class="btn btn-default navbar-btn btn-logout"><i class="glyphicon glyphicon-chevron-left"></i> Back to words</button>
+        </div>
+    </div>
+
     <h4>Edit word</h4>
 
-    <form class="form-horizontal" ng-submit="ctrl.send(ctrl.form)" role="form">
+    <span ng-if="ctrl.notFound"><h4 class="text-danger">This word does not exist.</h4></span>
+
+    <form ng-if="!ctrl.notFound" class="form-horizontal" ng-submit="ctrl.send(ctrl.form)" role="form">
         <div class="row form-group">
             <div class="col-xs-2">
                 <input type="text" ng-model="ctrl.form.word" class="form-control" id="create-word" name="word" placeholder="Word">

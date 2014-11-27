@@ -11,6 +11,11 @@ angular.module('langmaster.words')
     WordsRepository.findById($stateParams.id)
         .then(function(word) {
             ctrl.form = word;
+        })
+        .catch(function(err) {
+            if (err.status === 404) {
+                ctrl.notFound = true;
+            }
         });
 
     ctrl.send = function(word) {
