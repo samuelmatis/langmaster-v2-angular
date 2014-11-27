@@ -15,6 +15,8 @@ angular.module('langmaster.words')
                 .then(function(resWord) {
                     $rootScope.$emit('wordCreated', resWord);
                     ctrl.word = '';
+                    form.$setPristine();
+                    ctrl.submitted = false;
                 });
         }
     };
