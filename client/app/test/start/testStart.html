@@ -6,7 +6,12 @@
         </div>
     </div>
 
-    <div class="row">
+    <div ng-if="!ctrl.words.length" class="row">
+        <h1>You do not have any words</h1>
+        <h4>Go to words page and add some.</h4>
+    </div>
+
+    <div ng-if="ctrl.words.length" class="row">
         <div id="test" class="col-md-4 col-md-offset-4">
             <h1>Welcome to test</h1>
             <div class="row">
