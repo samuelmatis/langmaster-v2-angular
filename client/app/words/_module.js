@@ -33,7 +33,7 @@ angular.module('langmaster.words', [])
             url: '/edit/:id',
             views: {
                 'full': {
-                    templateUrl: 'app/words/edit/wordsEdit.html',
+                    templateUrl: 'app/words/edit/wordEdit.html',
                     controller: 'Words.EditCtrl',
                     controllerAs: 'ctrl'
                 }
