@@ -29,9 +29,34 @@ $btnGithubBackgroundHighlight:      #ccc;
     @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
 }
 
-// Form buttons
+// Normal buttons
 // --------------------------------------------------
-.btn-subscription-add {
-    margin-right: 5px;
-    margin-bottom: 5px;
+
+.btn {
+    border: 0;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.signup-btn {
+    padding: 14px 18px;
+    font-size: 18px;
+    background-color: #2aca76;
+}
+
+.signup-btn:hover {
+    background-color: #38d683;
 }
