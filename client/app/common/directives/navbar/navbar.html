@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">langmaster<small>.io</small></a>
+                <a href="/" class="navbar-brand">Langmaster.io</a>
             </div>
             <div collapse="ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
@@ -23,7 +23,7 @@
                     <li ng-hide="ctrl.isLoggedIn()" ui-sref-active="active" class="login-button"><a ui-sref="login" ng-click="ctrl.collapseMenu()">Login</a></li>
                     <li ng-hide="ctrl.isLoggedIn()" ui-sref-active="active" class="signup-button"><a ui-sref="signup" ng-click="ctrl.collapseMenu()">Sign up</a></li>
                     <li ng-show="ctrl.isLoggedIn()" class="current-user"><p class="navbar-text" ng-bind="'Hello ' + ctrl.getCurrentUser().name"></p> </li>
-                    <li ng-show="ctrl.isLoggedIn()"><a href="" ng-click="ctrl.logout(); ctrl.collapseMenu()">Logout</a></li>
+                    <li class="logout" ng-show="ctrl.isLoggedIn()"><a href="" ng-click="ctrl.logout(); ctrl.collapseMenu()">Logout</a></li>
                 </ul>
             </div>
         </div>
