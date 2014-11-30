@@ -51,6 +51,10 @@
                 margin-bottom: 40px;
             }
 
+            @media (max-width: 1200px) {
+                margin-left: 0px !important;
+            }
+
             @media (min-width: $screen-md-min) {
                 margin-left: 30px;
             }
