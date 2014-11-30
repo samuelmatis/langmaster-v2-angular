@@ -2,6 +2,10 @@
 
 angular.module('langmaster.home')
 
-.controller('HomeCtrl', function () {
+.controller('HomeCtrl', function (Auth) {
+
+    var ctrl = this;
+
+    ctrl.isLoggedIn = Auth.isLoggedIn;
 
 });

@@ -1,3 +1,32 @@
+.navbar-home {
+    border-bottom: 0px;
+    @include gradient-horizontal(#00c6ff, #0072ff, 10%, 90%);
+
+    .navbar-brand {
+        color: white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .navbar-nav {
+        li {
+            a {
+                color: white;
+            }
+
+            &.logout {
+                background-color: #2aca76;
+            }
+        }
+    }
+
+    .navbar-text {
+        color: white;
+    }
+}
+
 .layout-home {
     .hero-unit {
         position: relative;
@@ -5,9 +34,9 @@
         color: #F5F5F5;
         text-align: center;
         text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-        background: #4393B9;
         border-bottom: none;
         margin-top: -20px;
+        @include gradient-horizontal(#00c6ff, #0072ff, 10%, 90%);
 
         h1 {
             font-size: 60px;
@@ -16,10 +45,32 @@
         }
     }
 
-    .footer {
-        text-align: center;
-        padding: 30px 0;
-        margin-top: 70px;
-        border-top: 1px solid #E5E5E5;
+    .features {
+        .feature {
+            @media (max-width: $screen-sm-max) {
+                margin-bottom: 40px;
+            }
+
+            @media (min-width: $screen-md-min) {
+                margin-left: 30px;
+            }
+
+            .description {
+                color: #303030;
+                font-size: 18px;
+                margin-top: 15px;
+                display: block;
+            }
+        }
+
+        .arrow {
+            margin-top: 70px;
+        }
+    }
+
+    .bottom {
+        padding-top: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }

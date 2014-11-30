@@ -1,11 +1,53 @@
 <div class="layout-home">
     <header class="hero-unit">
         <div class="container">
-            <h1>Langmaster.io</h1>
+            <h1>Langmaster</h1>
             <p class="lead">Learn foreign vocabulary easier way</p>
+            <button ng-if="!ctrl.isLoggedIn()" ui-sref="signup" class="btn signup-btn">SIGN UP, IT'S FOR FREE</button>
+            <button ng-if="ctrl.isLoggedIn()" ui-sref="words.list" class="btn signup-btn">GO TO APP</button>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container features">
+
+        <div class="row text-center">
+            <h1>How it works?</h1>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <div class="col-md-3 feature">
+                <img src="assets/images/homepage/how-it-works-1.png">
+                <span class="description">1. Add your new words</span>
+            </div>
+            <div class="col-md-1 hidden-xs hidden-sm">
+                <img class="arrow" src="assets/images/homepage/arrow.png">
+            </div>
+            <div class="col-md-3 feature">
+                <img src="assets/images/homepage/how-it-works-2.png">
+                <span class="description">2. Test yourself</span>
+            </div>
+            <div class="col-md-1 hidden-xs hidden-sm">
+                <img class="arrow" src="assets/images/homepage/arrow.png">
+            </div>
+            <div class="col-md-3 feature">
+                <img src="assets/images/homepage/how-it-works-3.png">
+                <span class="description">3. See your improvement</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container bottom text-center">
+        <div class="row">
+            <h1>Do you think Langmaster could be useful for you?</h1>
+        </div>
+        <hr>
+        <div class="row">
+            <p class="centered">
+                <a ui-sref="signup" ng-disabled="ctrl.isLoggedIn()" class="btn btn-lg btn-success" role="button"><i class="fa fa-user"></i> SIGN UP, IT'S FOR FREE</a>
+            </p>
+        </div>
     </div>
 </div>
