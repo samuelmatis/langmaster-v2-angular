@@ -8,6 +8,18 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+html, body {
+  height: 100%;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -21,6 +33,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'account/profile/profile.scss';
 @import 'account/signup/signup.scss';
 @import 'admin/admin.scss';
+@import 'common/directives/footer/footer.scss';
 @import 'common/directives/navbar/navbar.scss';
 @import 'common/services/modal/modal.scss';
 @import 'common/ui/alerts.scss';

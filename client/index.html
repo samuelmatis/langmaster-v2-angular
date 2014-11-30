@@ -23,8 +23,12 @@
         <![endif]-->
 
         <!-- App -->
-        <div lm-navbar=""></div>
-        <div ui-view=""></div>
+        <div id="wrap">
+            <div lm-navbar=""></div>
+            <div ui-view=""></div>
+        </div>
+
+        <div lm-footer=""></div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
@@ -68,6 +72,7 @@
             <script src="app/admin/admin.ctrl.js"></script>
             <script src="app/common/_module.js"></script>
             <script src="app/common/directives/autofocus.js"></script>
+            <script src="app/common/directives/footer/footer.js"></script>
             <script src="app/common/directives/mongooseError.js"></script>
             <script src="app/common/directives/navbar/navbar.js"></script>
             <script src="app/common/directives/stars/stars.js"></script>
