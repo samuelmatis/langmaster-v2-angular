@@ -35,6 +35,8 @@ angular.module('langmaster.account', [])
             templateUrl: 'app/account/profile/profile.html',
             controller: 'Account.ProfileCtrl',
             controllerAs: 'ctrl',
-            authenticate: true
+            data: {
+                authenticate: true
+            }
         });
 });

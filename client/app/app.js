@@ -22,8 +22,10 @@ angular.module('langmaster', [
 .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
+        if (!next.data) return true;
+
         Auth.isLoggedInAsync(function(loggedIn) {
-            if (next.authenticate && !loggedIn) {
+            if (next.data.authenticate && !loggedIn) {
                 $location.path('/login');
             }
         });

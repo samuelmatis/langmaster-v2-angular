@@ -7,11 +7,13 @@ angular.module('langmaster.words', [])
         .state('words', {
             abstract: true,
             url: '/words',
+            data: {
+                authenticate: true
+            },
             templateUrl: 'app/words/_layout.html',
             controller: function($rootScope) {
                 $rootScope.showNavbar = true;
-            },
-            authenticate: true
+            }
         })
         .state('words.list', {
             url: '',
@@ -26,8 +28,7 @@ angular.module('langmaster.words', [])
                     controller: 'Words.AddCtrl',
                     controllerAs: 'ctrl'
                 }
-            },
-            authenticate: true
+            }
         })
         .state('words.edit', {
             url: '/edit/:id',
@@ -37,7 +38,6 @@ angular.module('langmaster.words', [])
                     controller: 'Words.EditCtrl',
                     controllerAs: 'ctrl'
                 }
-            },
-            authenticate: true
+            }
         });
 });
