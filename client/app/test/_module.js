@@ -10,10 +10,8 @@ angular.module('langmaster.test', [])
             templateUrl: 'app/test/_layout.html',
             data: {
                 authenticate: true,
+                navbar: false,
                 title: 'Test'
-            },
-            controller: function($rootScope) {
-                $rootScope.showNavbar = false;
             }
         })
         .state('test.start', {

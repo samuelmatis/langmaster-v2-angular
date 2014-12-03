@@ -10,6 +10,7 @@ angular.module('langmaster.account', [])
             controller: 'Account.LoginCtrl',
             controllerAs: 'ctrl',
             data: {
+                navbar: true,
                 title: 'Login'
             },
             resolve: {
@@ -26,6 +27,7 @@ angular.module('langmaster.account', [])
             controller: 'Account.SignupCtrl',
             controllerAs: 'ctrl',
             data: {
+                navbar: true,
                 title: 'Sign up'
             },
             resolve: {
@@ -43,6 +45,7 @@ angular.module('langmaster.account', [])
             controllerAs: 'ctrl',
             data: {
                 authenticate: true,
+                navbar: true,
                 title: 'Profile'
             }
         });

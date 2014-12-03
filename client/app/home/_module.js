@@ -9,6 +9,7 @@ angular.module('langmaster.home', [])
             templateUrl: 'app/home/home.html',
             controller: 'HomeCtrl',
             data: {
+                navbar: true,
                 title: 'Home'
             }
         });

@@ -9,12 +9,10 @@ angular.module('langmaster.words', [])
             url: '/words',
             data: {
                 authenticate: true,
+                navbar: true,
                 title: 'Words'
             },
-            templateUrl: 'app/words/_layout.html',
-            controller: function($rootScope) {
-                $rootScope.showNavbar = true;
-            }
+            templateUrl: 'app/words/_layout.html'
         })
         .state('words.list', {
             url: '',

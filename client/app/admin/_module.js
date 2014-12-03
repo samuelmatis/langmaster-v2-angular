@@ -11,6 +11,7 @@ angular.module('langmaster.admin', [])
             controllerAs: 'ctrl',
             data: {
                 authenticate: true,
+                navbar: true,
                 title: 'Admin'
             },
             resolve: {

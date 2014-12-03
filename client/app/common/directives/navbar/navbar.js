@@ -21,8 +21,6 @@ angular.module('langmaster.common')
                 state: 'profile'
             }];
 
-            $rootScope.showNavbar = true;
-
             ctrl.isCollapsed = true;
             ctrl.isLoggedIn = Auth.isLoggedIn;
             ctrl.isAdmin = Auth.isAdmin;
