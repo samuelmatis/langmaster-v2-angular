@@ -21,8 +21,9 @@ angular.module('langmaster', [
 
 .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
+    // and change title of current route
     $rootScope.$on('$stateChangeStart', function (event, next) {
-        if (!next.data) return true;
+        $rootScope.pageTitle = next.data.title;
 
         Auth.isLoggedInAsync(function(loggedIn) {
             if (next.data.authenticate && !loggedIn) {

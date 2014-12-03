@@ -9,6 +9,9 @@ angular.module('langmaster.account', [])
             templateUrl: 'app/account/login/login.html',
             controller: 'Account.LoginCtrl',
             controllerAs: 'ctrl',
+            data: {
+                title: 'Login'
+            },
             resolve: {
                 isLoggedIn: function(Auth, $state) {
                     Auth.isLoggedInAsync(function(result) {
@@ -22,6 +25,9 @@ angular.module('langmaster.account', [])
             templateUrl: 'app/account/signup/signup.html',
             controller: 'Account.SignupCtrl',
             controllerAs: 'ctrl',
+            data: {
+                title: 'Sign up'
+            },
             resolve: {
                 isLoggedIn: function(Auth, $state) {
                     Auth.isLoggedInAsync(function(result) {
@@ -36,7 +42,8 @@ angular.module('langmaster.account', [])
             controller: 'Account.ProfileCtrl',
             controllerAs: 'ctrl',
             data: {
-                authenticate: true
+                authenticate: true,
+                title: 'Profile'
             }
         });
 });

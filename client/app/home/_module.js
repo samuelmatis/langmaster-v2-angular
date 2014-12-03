@@ -7,6 +7,9 @@ angular.module('langmaster.home', [])
         .state('home', {
             url: '/',
             templateUrl: 'app/home/home.html',
-            controller: 'HomeCtrl'
+            controller: 'HomeCtrl',
+            data: {
+                title: 'Home'
+            }
         });
 });

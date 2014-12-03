@@ -8,7 +8,8 @@ angular.module('langmaster.words', [])
             abstract: true,
             url: '/words',
             data: {
-                authenticate: true
+                authenticate: true,
+                title: 'Words'
             },
             templateUrl: 'app/words/_layout.html',
             controller: function($rootScope) {

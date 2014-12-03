@@ -9,7 +9,8 @@ angular.module('langmaster.test', [])
             url: '/test',
             templateUrl: 'app/test/_layout.html',
             data: {
-                authenticate: true
+                authenticate: true,
+                title: 'Test'
             },
             controller: function($rootScope) {
                 $rootScope.showNavbar = false;

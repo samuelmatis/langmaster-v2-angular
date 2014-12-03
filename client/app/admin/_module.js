@@ -10,7 +10,8 @@ angular.module('langmaster.admin', [])
             controller: 'Admin.AdminCtrl',
             controllerAs: 'ctrl',
             data: {
-                authenticate: true
+                authenticate: true,
+                title: 'Admin'
             },
             resolve: {
                 isAdmin: function(Auth, $state, $timeout) {
