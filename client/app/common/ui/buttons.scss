@@ -36,6 +36,7 @@ $btnGithubBackgroundHighlight:      #ccc;
     border: 0;
     padding: 5px 15px;
     font-size: 16px;
+    line-height: 1.42857;
     cursor: pointer;
     color: #fff;
     border-radius: 2px;
@@ -54,6 +55,11 @@ $btnGithubBackgroundHighlight:      #ccc;
     color: #333;
     background-color: #fff;
     border-color: #ccc;
+}
+
+.btn-word-edit {
+    padding: 3px 10px;
+    font-size: 13px;
 }
 
 .signup-btn {

@@ -19,8 +19,8 @@
                     <td ng-bind="word.translation"></td>
                     <td><span lm-stars="{{::word.strength}}"></span></td>
                     <td>
-                        <a class="btn btn-default btn-xs" ui-sref="words.edit({id: word._id})"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                        <a class="btn btn-default btn-xs" ng-click="ctrl.removeWord(word)"><i class="glyphicon glyphicon-remove"></i> Delete</a>
+                        <a class="btn btn-default btn-word-edit btn-xs" ui-sref="words.edit({id: word._id})"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                        <a class="btn btn-default btn-word-edit btn-xs" ng-click="ctrl.removeWord(word)"><i class="glyphicon glyphicon-remove"></i> Delete</a>
                     </td>
                 </tr>
                 <tr ng-if="!ctrl.words.length"><td colspan="4">No words to display</td></tr>
