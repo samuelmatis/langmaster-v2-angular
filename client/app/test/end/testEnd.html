@@ -19,13 +19,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="word in ::ctrl.words">
-                                <td ng-bind="::word.word"></td>
+                            <tr ng-repeat="word in ctrl.words">
+                                <td ng-bind="word.word"></td>
                                 <td>
-                                    <span ng-show="word.strength === 0" class="glyphicon glyphicon-star-empty"></span>
-                                    <span ng-show="word.success === 1" class="glyphicon glyphicon-circle-arrow-up"></span>
-                                    <span ng-show="word.success === -1" class="glyphicon glyphicon-circle-arrow-down"></span>
-                                    <span lm-stars="{{::word.strength}}"></span>
+                                    <span ng-show="word.success === 1" class="glyphicon glyphicon-arrow-up"></span>
+                                    <span ng-show="word.success === -1" class="glyphicon glyphicon-arrow-down"></span>
+                                    <span lm-stars="{{word.strength}}"></span>
                                 </td>
                             </tr>
                         </tbody>
