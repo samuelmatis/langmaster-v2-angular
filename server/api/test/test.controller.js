@@ -10,15 +10,13 @@ var validationError = function(res, err) { return res.json(422, err);};
 // Send test
 exports.sendTest = function(req, res) {
 
-    var result = [];
     var success = 0;
-
     var words = req.body.words;
 
-    async.each(words, updateWord, function(err) {
+    async.map(words, updateWord, function(err, results) {
         if (err) handleError(res, err);
 
-        return res.json(result);
+        return res.json(results);
     });
 
     function updateWord(reqWord, callback) {
@@ -62,7 +60,7 @@ exports.sendTest = function(req, res) {
             }
 
             word.save(function(err) {
-                if (err) return handleError(res, err);
+                if (err) callback(err);
 
                 var resultWord = {
                     word: word.word,
@@ -72,9 +70,7 @@ exports.sendTest = function(req, res) {
                     success: success
                 };
 
-                result.push(resultWord);
-
-                callback();
+                callback(null, resultWord);
             });
 
         });
