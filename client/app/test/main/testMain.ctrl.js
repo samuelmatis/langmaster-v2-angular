@@ -2,7 +2,7 @@
 
 angular.module('langmaster.test')
 
-.controller('Test.MainCtrl', function ($rootScope, $state, Test) {
+.controller('Test.MainCtrl', function ($rootScope, $window, $state, Test) {
 
     var ctrl = this;
 
@@ -26,6 +26,13 @@ angular.module('langmaster.test')
             ctrl.endTest();
         }
     });
+
+    $window.onbeforeunload = function(event) {
+        event = event || $window.event;
+        event.preventDefault = true;
+        event.cancelBubble = true;
+        event.returnValue = 'You will lose your test progress if you leave.';
+    };
 
     ctrl.generateRandomWord = function() {
         var newWord = _.sample(ctrl.words);
