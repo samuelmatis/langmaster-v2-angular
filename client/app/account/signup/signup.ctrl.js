@@ -8,29 +8,25 @@ angular.module('langmaster.account')
     ctrl.user = {};
     ctrl.errors = {};
 
-    ctrl.register = function(form) {
-        ctrl.submitted = true;
+    ctrl.submit = function(form) {
+        Auth.createUser({
+            name: ctrl.user.name,
+            email: ctrl.user.email,
+            password: ctrl.user.password
+        })
+        .then( function() {
+            $state.go('words.list');
+        })
+        .catch( function(err) {
+            err = err.data;
+            ctrl.errors = {};
 
-        if(form.$valid) {
-            Auth.createUser({
-                name: ctrl.user.name,
-                email: ctrl.user.email,
-                password: ctrl.user.password
-            })
-            .then( function() {
-                $state.go('words.list');
-            })
-            .catch( function(err) {
-                err = err.data;
-                ctrl.errors = {};
-
-                // Update validity of form fields ctrl match the mongoose errors
-                angular.forEach(err.errors, function(error, field) {
-                    form[field].$setValidity('mongoose', false);
-                    ctrl.errors[field] = error.message;
-                });
+            // Update validity of form fields ctrl match the mongoose errors
+            angular.forEach(err.errors, function(error, field) {
+                form[field].$setValidity('mongoose', false);
+                ctrl.errors[field] = error.message;
             });
-        }
+        });
     };
 
     ctrl.loginOauth = function(provider) {

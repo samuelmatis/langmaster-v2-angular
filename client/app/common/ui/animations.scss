@@ -1,0 +1,13 @@
+@keyframes shake {
+    0% {transform: translateX(0);}
+    12.5% {transform: translateX(-12px) rotateY(-10deg)}
+    37.5% {transform: translateX(10px) rotateY(8deg)}
+    62.5% {transform: translateX(-6px) rotateY(-4deg)}
+    87.5% {transform: translateX(4px) rotateY(2deg)}
+    100% {transform: translateX(0)}
+}
+
+.animate-shake {
+    -webkit-animation: shake 400ms ease-in-out;
+    animation: shake 400ms ease-in-out;
+}

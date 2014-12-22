@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <form class="form form-horizontal" name="form" ng-submit="ctrl.login(form)" novalidate>
+            <form class="form form-horizontal" name="form" shake-form submit="ctrl.submit()" submitted="ctrl.submitted" novalidate>
 
                 <div class="form-group" ng-class="{ 'has-error': form.email.$invalid && ctrl.submitted }">
                     <label class="col-lg-2 control-label" for="email">Email</label>

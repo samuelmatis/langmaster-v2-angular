@@ -8,21 +8,17 @@ angular.module('langmaster.account')
     ctrl.user = {};
     ctrl.errors = {};
 
-    ctrl.login = function(form) {
-        ctrl.submitted = true;
-
-        if(form.$valid) {
-            Auth.login({
-                email: ctrl.user.email,
-                password: ctrl.user.password
-            })
-            .then( function() {
-                $state.go('words.list');
-            })
-            .catch( function(err) {
-                ctrl.errors.other = err.message;
-            });
-        }
+    ctrl.submit = function() {
+        Auth.login({
+            email: ctrl.user.email,
+            password: ctrl.user.password
+        })
+        .then( function() {
+            $state.go('words.list');
+        })
+        .catch( function(err) {
+            ctrl.errors.other = err.message;
+        });
     };
 
     ctrl.loginOauth = function(provider) {
